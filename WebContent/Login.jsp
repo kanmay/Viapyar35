@@ -15,12 +15,12 @@
 	<link href="bootstrap/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/ms.js"></script>
+	<script src="js/myjs.js"></script>
 	
 	<script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Google Platform Library -->
  <script src="https://apis.google.com/js/api:client.js"></script>
- <meta name="google-signin-client_id" content="338051692993-k855dja87t16auiol4om0hmv23kd4n03.apps.googleusercontent.com"> <!-- google-signin-client_id meta element. -->
-
+ <meta name="google-signin-client_id" content="825262867817-t5fbqfkihf11au3ng52j79vqt13s9s71.apps.googleusercontent.com"> <!-- google-signin-client_id meta element. -->
+<meta name="google-signin-scope" content="profile email">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -68,35 +68,38 @@
 
 
 
-<script>
-
-var fname,lname,email;
- window.fbAsyncInit = function() {
-   FB.init({
-     appId      : '379190129103410',
-     xfbml      : true,
-     version    : 'v2.8'
-   });
-   FB.AppEvents.logPageView();
- };
-
- (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js"; 
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-
-
-  function checkLoginState(){
-  console.log("hieee");
  
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
+ 
+
+ <!--<script>
+   window.fbAsyncInit = function() {
+     FB.init({
+       appId      : '109082079655818',
+       cookie     : true,
+       xfbml      : true,
+       version    : 'v2.8'
+     });
+     FB.AppEvents.logPageView();   
+   };
+
+   (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+ 
+ 
+ 
+
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+
 
   function statusChangeCallback(response) {
      console.log('statusChangeCallback');
@@ -154,7 +157,7 @@ var fname,lname,email;
 gapi.load('auth2', function(){
   // Retrieve the singleton for the GoogleAuth library and set up the client.
   auth2 = gapi.auth2.init({
-    client_id: '338051692993-k855dja87t16auiol4om0hmv23kd4n03.apps.googleusercontent.com',
+    client_id: '825262867817-t5fbqfkihf11au3ng52j79vqt13s9s71.apps.googleusercontent.com',
     cookiepolicy: 'single_host_origin',
     // Request scopes in addition to 'profile' and 'email'
     //scope: 'additional_scope'
@@ -208,7 +211,8 @@ auth2.attachClickHandler(element, {},
 }
 
 
-</script>
+</script>-->
+<script>startApp();</script>
 
 
    <div class="div1">

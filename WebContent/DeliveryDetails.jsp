@@ -55,6 +55,10 @@
       }
       }
     </style>
+    
+    
+
+
 </head>
 <c:if test="${sessionScope.user == null}">
     <c:redirect url="Login.jsp"/>
@@ -283,7 +287,7 @@ AND cart.customerId = "${sessionScope.user}";              </sql:query>
     <div class="radio">
     <div class="btn1 btn-lg" style="background-color:orange;">
     <label style="font-size: 1em">
-    <input type="radio" name="paymentMode" value="COD" checked>
+    <input type="radio" name="paymentMode" value="COD" >
     <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
     Cash on Delivery
     </div>
@@ -315,10 +319,35 @@ AND cart.customerId = "${sessionScope.user}";              </sql:query>
     </div>
     
     </div>
+    
+        <div style="display:none">
+<form action="PayMoney" method="POST">
+<!-- Note that the amount is in paise = 50 INR -->
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_rnvkmntp1h2a79"
+    data-amount=${200}
+    data-buttontext="Pay with Razorpay"
+    data-name="Mayank"
+    data-description="Purchase Description"
+    data-image="https://your-awesome-site.com/your_logo.jpg"
+    data-prefill.name="Mayank Singhal"
+    data-prefill.email="support@razorpay.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" value="Hidden Element" name="hidden">
+</form>
+</div>
     <%@ include file="footer.html" %>
     
+
+    <!-- This script checks which payment method is selected -->
+    <script>
     
     
+    	
+    
+    </script>
     
      <!-- This script handles the search -->
       
@@ -671,6 +700,14 @@ function validateDeliveryDetails(){
 			 document.getElementById("RPhone").style.borderColor="#2874A6";
 		 }
 		
+		 var myRadio = $('input[name=paymentMode]:checked').val();
+		 console.log("1: "+myRadio);
+	    	if(myRadio=="Online"){
+	    		var x=	document.getElementsByClassName("razorpay-payment-button");
+	    		 x[0].click();
+	    		console.log("2 :  "+ myRadio);
+	    		return false;
+	    	}
 	}
 
  </script>
