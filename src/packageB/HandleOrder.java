@@ -43,6 +43,7 @@ public class HandleOrder extends HttpServlet {
 		SendEmail se=new SendEmail();
 		Random random = new Random(System.nanoTime());
 		UtilityFunctions uf=new UtilityFunctions();
+		SendSMS sms=new SendSMS();
 		
 		JSONObject ItemsOrdered=new JSONObject();
 		JSONArray ItemsList=new JSONArray();
@@ -127,6 +128,7 @@ public class HandleOrder extends HttpServlet {
 				EmailMessage=uf.EmailBuilder(ItemsOrdered, amount);
 				
 				se.sendEmail(email,EmailMessage);
+				sms.sendSms(receiversPhone, ItemsOrdered, amount);
 
 			}catch(Exception e){
 				System.out.println(e.getMessage());
@@ -171,6 +173,7 @@ public class HandleOrder extends HttpServlet {
 		    	    System.out.println("items are:" +ItemsOrdered);
 		    	    System.out.println(EmailMessage);
 		 		    se.sendEmail(email,EmailMessage);
+		 		    sms.sendSms(receiversPhone, ItemsOrdered, amount);
 		 		
 
 		       }catch(Exception E){

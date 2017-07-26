@@ -173,6 +173,29 @@ public class UtilityFunctions {
 				
 	}
 	
+ static	String messageBuilder(JSONObject ItemsOrdered,int amount){
+		
+		try{
+			int size=ItemsOrdered.getJSONArray("ItemsOrdered").length();
+			
+			String message="Dear Customer, Your order/s with ";
+			
+			for(int i=0;i<size;i++){
+				message+=",Order Id: "+((JSONObject) ItemsOrdered.getJSONArray("ItemsOrdered").get(i)).get("RanOrderId")+
+						" referring to "+((JSONObject) ItemsOrdered.getJSONArray("ItemsOrdered").get(i)).get("product");
+			}
+			
+			message+=" worth Rs."+amount+" has been Successfully placed and will be delivered by "+
+			         ((JSONObject) ItemsOrdered.getJSONArray("ItemsOrdered").get(0)).get("deliveryDate");
+			
+			return message;
+			
+		}catch(Exception e){
+			return "error";
+		}
+		
+	}
+	
 	public static void main(String[] args){
 		
 		UtilityFunctions uf=new UtilityFunctions();
