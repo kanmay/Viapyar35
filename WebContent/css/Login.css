@@ -1,0 +1,51 @@
+.inputvalues{
+ border-radius: 10px;
+ border: 2px solid #2874A6;
+
+
+}
+
+#indexheader{
+
+margin-top: -1px;
+background-color: #2874A6;
+width:100%;
+border-radius: 5px;
+
+
+}
+#indexheading{
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-style: italic;
+color:white;
+float: left;
+margin-left: 10px;
+}
+
+#loginbutton{
+    background-color: #f05424; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius:10px;
+
+}
+#mloginsection{
+	
+	height: 700px;
+	
+}
+#footer {
+    padding:5px 20px;
+    background-color:#696969;
+    text-align:right;
+    color:#fff;
+    font-size:15px;
+    border-radius: 10px;
+}

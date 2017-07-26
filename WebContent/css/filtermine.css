@@ -1,0 +1,53 @@
+
+div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border: 3px solid white;
+    background-color:grey;
+    color:white;
+    padding:5px;
+}
+.hidet{
+	display:none;
+}
+ .panel-heading{
+    padding: 3px 3px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+hr
+{
+padding:0px;
+margin:0px;
+}
+.designtog
+{
+padding:8px;
+
+}
+.floatdesigntog
+{
+	float:left;
+width:55px;
+font-size:10px;
+}
+
+.extra{
+padding:2px; 
+background-color:white;
+}
+
+.designtog:hover
+{background-color:#2874A6;
+color:white;
+}
+table{
+	font-size:10px;
+}
+article
+{
+	margin:13px;
+}
